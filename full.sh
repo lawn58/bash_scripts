@@ -19,4 +19,4 @@ echo "Все коды состояния  4xx и 5xx"
 cat access.log | awk '{print $9}' | grep ^4 > 4.4.txt && cat access.log | awk '{print $9}'  | grep ^5 >> 4.4.txt && cat 4.4.txt | uniq -d -c | sort -rn > 4.5.txt && cat 4.5.txt &&
 echo "------------------------------------------------------"
 echo "all"
-rm -f 1.1.txt 2.2.txt 3.3.txt 4.4.txt 4.5.txt access.log
+rm -f 1.1.txt 2.2.txt 3.3.txt 4.4.txt 4.5.txt
