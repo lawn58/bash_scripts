@@ -2,7 +2,7 @@
 if
 find / -name full.sh -exec {} \; > otchet.txt &&
 mailx root@localhost < otchet.txt &&
-rm otchet.txt
+rm otchet.txt access.log
 
 then
 exit 0
