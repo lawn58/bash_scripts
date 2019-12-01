@@ -4,11 +4,11 @@ cat access.log | awk '{print $4}' | head -n 1 &&  date | awk '{print $2,$3,$4,$6
 
 #1
 echo "Топ-10 клиентских URL запрашиваемых с этого сервера"
-grep -wo "http://.*" access.log | awk '{print $1}' | uniq -d -c | sort -u | uniq > 1.1.txt && grep -wo "https://.*" access.log | awk '{print $1}' | uniq -d -c | sort -u | uniq >> 1.1.txt && tail -n 10 1.1.txt | uniq | sort -rn -k1 &&
+cat access.log | awk '{print $7}' | sort | uniq -c | sort -rn | head -n 10 > 1.1.txt && cat 1.1.txt &&
 echo "------------------------------------------------------" 
 #2
 echo "Топ-10 клиентских IP"
-cat access.log | awk '{print $1}' | uniq -c -d | sort -rn > 2.2.txt && tail -n 10 2.2.txt &&
+cat access.log | awk '{print $1}' | sort | uniq -c | sort -rn | head -n 10 > 2.2.txt && tail -n 10 2.2.txt &&
 echo "------------------------------------------------------"
 #3
 echo "Все коды состояния HTTP и их количество"
