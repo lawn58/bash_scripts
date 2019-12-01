@@ -1,7 +1,7 @@
 #!/bin/bash
 
 LOCKFILE=/home/user/mail.sh
-
+#LOCKFILE=/var/log/x
 if [ -f $LOCKFILE ]
 then
   echo "Lockfile active, no new runs."
